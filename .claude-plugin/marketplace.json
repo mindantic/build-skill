@@ -1,0 +1,16 @@
+{
+  "name": "build-local",
+  "description": "Local development marketplace for the build plugin",
+  "owner": {
+    "name": "Shahriar P. Shuvo",
+    "email": "mindantic@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "build",
+      "description": "A spec driven build pipeline: brief, research, design, dev decisions, SRS, execution, and attention to detail, QA and handoff gates so nothing ships half done.",
+      "version": "0.1.0",
+      "source": "./"
+    }
+  ]
+}
