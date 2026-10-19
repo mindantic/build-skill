@@ -1,0 +1,14 @@
+{
+  "name": "build-skill",
+  "displayName": "Build Skill",
+  "version": "0.1.0",
+  "description": "A spec driven build pipeline for Claude Code: brief, research, design, dev decisions, SRS, execution, and attention to detail, QA and handoff gates so nothing ships half done.",
+  "author": {
+    "name": "Shahriar P. Shuvo",
+    "email": "mindantic@gmail.com"
+  },
+  "homepage": "https://github.com/mindantic/build-skill",
+  "repository": "https://github.com/mindantic/build-skill",
+  "license": "MIT",
+  "keywords": ["workflow", "spec", "srs", "frontend", "qa", "attention-to-detail", "requirements"]
+}
