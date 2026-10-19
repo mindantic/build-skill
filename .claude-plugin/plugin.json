@@ -1,6 +1,6 @@
 {
-  "name": "build-skill",
-  "displayName": "Build Skill",
+  "name": "build",
+  "displayName": "Build",
   "version": "0.1.0",
   "description": "A spec driven build pipeline for Claude Code: brief, research, design, dev decisions, SRS, execution, and attention to detail, QA and handoff gates so nothing ships half done.",
   "author": {
