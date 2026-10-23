@@ -230,7 +230,9 @@ for (const url of urls) {
           const state = await page.evaluate(() => {
             const node = document.activeElement;
             if (!node || node === document.body || /^(NEXTJS-PORTAL|VITE-ERROR-OVERLAY)$/.test(node.tagName)) return null;
-            const style = getComputedStyle(node);
+            const box = node.getBoundingClientRect();
+            const target = box.width <= 2 || box.height <= 2 ? node.closest("label") ?? node.parentElement ?? node : node;
+            const style = getComputedStyle(target);
             const ring = (style.outlineStyle !== "none" && parseFloat(style.outlineWidth) > 0) || style.boxShadow !== "none";
             return { ring, name: `${node.tagName.toLowerCase()} "${(node.getAttribute("aria-label") || node.textContent || "").trim().slice(0, 30)}"` };
           });
