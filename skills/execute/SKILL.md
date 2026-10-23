@@ -26,7 +26,8 @@ Input: `$ARGUMENTS`
 3. Use only tokens and components from `docs/design.md`. If something is missing there, ask instead of inventing.
 4. Run typecheck, lint and tests from `docs/dev.md`. Fix what fails.
 5. Open the page with agent-browser and click through every acceptance criterion once. This is a smoke check, not the gate.
-6. Commit per `docs/workflow.md`.
+6. For any task with UI, run `node <plugin>/reference/measure.mjs <url>` (where `<plugin>` is two levels up from this skill's base directory) on every page the task touches and fix every failure before setting `Review`. Never show UI to the user, or report it ready, with measure failures open.
+7. Commit per `docs/workflow.md`.
 
 ## Finishing
 

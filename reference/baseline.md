@@ -39,6 +39,9 @@ Items marked **HARD** fail the gate on their own. Everything else is a fail when
 - State changes have short transitions. Nothing snaps that should move, nothing animates for longer than it should.
 - Console is clean: no errors, no warnings, no leftover logs.
 - No placeholder text, lorem ipsum, fake data or "Coming soon" unless the spec asks for it.
+- Nothing changes height while the user is idle: autoplay, carousels, rotating content and late loading content reserve their largest size (measured as layout shift with no input).
+- Headlines and leads have a line limit per breakpoint, written in `docs/measure.json`, and stay within it at every width.
+- Marketing copy carries nothing that goes stale on its own: no hand typed counts, "new", or dates in headlines and leads.
 
 ## 5. No unnecessary components (HARD)
 

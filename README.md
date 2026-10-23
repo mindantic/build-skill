@@ -34,6 +34,18 @@ Every command works with no arguments. Claude asks one question at a time, each 
 - Every expected behavior is an acceptance criterion. If it is not one, it is not built or checked.
 - Gates verify in a real browser with agent-browser at 375, 768, 1024 and 1440, and every pass needs evidence.
 - `reference/baseline.md` is the global detail standard. A project's `docs/rules.md` extends it.
+- `reference/measure.mjs` measures what eyes miss: horizontal scroll, line limits, touch targets, clipped text, contrast, idle layout shift, focus rings, console and hydration errors and reduced motion, at every width and theme. `/build:execute` runs it before Review and `/build:atd` treats every failure as a fail. Configure it per project in `docs/measure.json`. A line limit is a number for every width, or an object keyed by the largest width it applies to, with `default` for wider screens:
+
+```json
+{
+  "widths": [375, 768, 1024, 1440],
+  "themes": ["light", "dark"],
+  "lines": { "h1": 2, ".hero p": 3, "section h2": { "375": 3, "default": 2 } },
+  "ignoreConsole": ["Largest Contentful Paint"],
+  "idleMs": 9000,
+  "minTarget": 44
+}
+```
 
 ## License
 
