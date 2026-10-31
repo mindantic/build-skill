@@ -190,6 +190,14 @@ for (const url of urls) {
         if (message.type() === "error" && !ignoreConsole.some((pattern) => pattern.test(message.text()))) errors.push(message.text().slice(0, 200));
       });
       page.on("pageerror", (error) => errors.push(`pageerror ${error.message.slice(0, 200)}`));
+      await page.addInitScript(
+        ([key, value]) => {
+          try {
+            localStorage.setItem(key, value);
+          } catch {}
+        },
+        [config.themeStorageKey ?? "theme", theme],
+      );
       await page.addInitScript(() => {
         window.__cls = 0;
         new PerformanceObserver((list) => {
